@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroCard from './HeroCard';
 
-const HeroCardList = (heroData) => {
+const HeroCardList = (heroData, onRouteChange, handleClick) => {
 
     console.log(heroData)
 
@@ -9,14 +9,18 @@ const HeroCardList = (heroData) => {
         heroData === undefined ?
         <h2>Uh oh...</h2>
         :
-        <div>
+        <div className="cardList">
             {   
-                heroData.heroData.map(hero => {
+                heroData.heroData.map((hero, i) => {
                     console.log('name:', hero.name, 'image:', hero.image)
                     return (
                         <HeroCard 
+                            key={i}
                             heroName={hero.name}
+                            heroId={hero.id}
                             imageOfHero={hero.image}
+                            onRouteChange={heroData.onRouteChange}
+                            handleClick={heroData.handleClick}
                         />
                     )
                 })

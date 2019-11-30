@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 export const useDataFetch = (url, dependencies) => {
 
     if (dependencies[0] === undefined || dependencies[0] === '') {
-        url = `https://superheroapi.com/api/YOUR_API_KEY/search/deadpool`;
+        url = `https://superheroapi.com/api/779757025830796/search/deadpool`;
     }
 
 

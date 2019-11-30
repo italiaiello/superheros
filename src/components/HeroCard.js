@@ -1,12 +1,12 @@
 import React from 'react';
 
-const HeroCard = (heroName, imageOfHero) => {
+const HeroCard = (heroName, heroId, imageOfHero, onRouteChange, handleClick) => {
 
-    console.log(heroName.imageOfHero)
+    console.log(heroName)
 
     return (
         <div className="card">
-            <div>
+            <div onClick={heroName.handleClick.bind(this, heroName)}>
                 <figure>
                     <img src={heroName.imageOfHero.url} alt={heroName.heroName}/>
                 </figure>
