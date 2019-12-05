@@ -50,14 +50,16 @@ const Hero = props => {
             route === 'home' ?
             <section id="content-container">
                 <article>
-                    <h1>Hero Hub</h1>
-                    <p>Search for any hero</p>
-                    <SearchBar onSearchChange={onSearchChange} searchWithEnterKey={searchWithEnterKey} onSubmitSearch={onSubmitSearch}></SearchBar>
+                    <article id="searchArea">
+                        <h1>Hero Hub</h1>
+                        <p>Search for any hero</p>
+                        <SearchBar onSearchChange={onSearchChange} searchWithEnterKey={searchWithEnterKey} onSubmitSearch={onSubmitSearch}></SearchBar>
+                    </article>
                     <HeroCardList heroData={heroData} onRouteChange={onRouteChange} handleClick={handleClick} />
                 </article>
             </section>
             :
-            <HeroDetails heroData={heroData} heroClicked={heroClicked}/>
+            <HeroDetails heroData={heroData} heroClicked={heroClicked} onRouteChange={onRouteChange}/>
 
         )
 
